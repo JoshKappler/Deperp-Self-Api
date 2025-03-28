@@ -1,28 +1,31 @@
-import 'dotenv/config';
 
 
+
+// Define the Config type (fields must match exactly these types)
 type Config = {
-    rpcUrl: string;
-    chainId: number;
-    address: string;
-}
+  rpcUrl: string;
+  chainId: number;
+  address: string;
+};
 
+// Example configuration for Arbitrum (replace with Base values if needed)
 const testnetConfig: Config = {
-    rpcUrl: 'https://arb1.arbitrum.io/rpc',
-    chainId: 42161
-    address: '0xDBaabB95757Fe4a5C9ffF0107201a74C90024488' 
-}
+  // Arbitrum Goerli testnet
+  rpcUrl: 'https://goerli-rollup.arbitrum.io/rpc',  // Arbitrum testnet public RPC URL&#8203;:contentReference[oaicite:3]{index=3}
+  chainId: 421613,                                  // Arbitrum Goerli chainId&#8203;:contentReference[oaicite:4]{index=4} 
+  address: '0x<Deperp_USDT-BTC_Testnet_Address>'    // Deperp contract address on Arbitrum testnet (USDT-BTC market)
+};
 
 const mainnetConfig: Config = {
-    rpcUrl: 'https://arb1.arbitrum.io/rpc', //Rate limited and not for production systems.
-    chainId: 42161
-    address: '0xDBaabB95757Fe4a5C9ffF0107201a74C90024488' // Taurus GA
-}
+  // Arbitrum One mainnet
+  rpcUrl: 'https://arb1.arbitrum.io/rpc',           // Arbitrum One mainnet RPC URL&#8203;:contentReference[oaicite:5]{index=5}
+  chainId: 42161,                                   // Arbitrum One chainId&#8203;:contentReference[oaicite:6]{index=6}
+  address: '0x<Deperp_USDT-BTC_Mainnet_Address>'    // Deperp contract address on Arbitrum mainnet (USDT-BTC market)
+};
 
-export const getConfig = () => {
-    if (process.env.TYPE_NETWORK === 'mainnet') {
-        return mainnetConfig;
-    }
+// Export a function to get the correct config based on environment
+export const getConfig = (): Config => {
+  return process.env.TYPE_NETWORK === 'mainnet' ? mainnetConfig : testnetConfig;
+};
 
-    return testnetConfig;
-}
+};
