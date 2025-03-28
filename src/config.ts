@@ -8,21 +8,14 @@ type Config = {
 }
 
 const testnetConfig: Config = {
-    rpcUrl: 'https://1rpc.io/base-goerli',
-    chainId: , // add testnet 
-    address: '' // add testnet 
+    rpcUrl: 'https://eth.llamarpc.com',
+    chainId: , 1,
+    address: '0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36'
 }
 
 const mainnetConfig: Config = {
-    rpcUrl: 'https://1rpc.io/base', //Rate limited and not for production systems.
-    chainId: 8453,
-    address: '0x5Dc939df0cf253873cf77B786A24d51BaA72cF75' // Taurus GA
+    rpcUrl: 'https://eth.llamarpc.com',
+    chainId: 1,
+    address: '0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36'
 }
 
-export const getConfig = () => {
-    if (process.env.TYPE_NETWORK === 'mainnet') {
-        return mainnetConfig;
-    }
-
-    return testnetConfig;
-}
