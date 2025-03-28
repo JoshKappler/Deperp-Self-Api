@@ -18,9 +18,9 @@ const testnetConfig: Config = {
 
 const mainnetConfig: Config = {
   // Arbitrum One mainnet
-  rpcUrl: 'https://arb1.arbitrum.io/rpc',           // Arbitrum One mainnet RPC URL&#8203;:contentReference[oaicite:5]{index=5}
-  chainId: 42161,                                   // Arbitrum One chainId&#8203;:contentReference[oaicite:6]{index=6}
-  address: '0x<Deperp_USDT-BTC_Mainnet_Address>'    // Deperp contract address on Arbitrum mainnet (USDT-BTC market)
+  rpcUrl: 'https://eth.llamarpc.com',           // Arbitrum One mainnet RPC URL&#8203;:contentReference[oaicite:5]{index=5}
+  chainId: 1,                                   // Arbitrum One chainId&#8203;:contentReference[oaicite:6]{index=6}
+  address: '0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36'    // Deperp contract address on Arbitrum mainnet (USDT-BTC market)
 };
 
 // Export a function to get the correct config based on environment
